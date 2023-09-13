@@ -1,5 +1,6 @@
 // Chapter-9-11-User-Input-And-Conditional-Statement 
 
+
 // Question-1
 var city = prompt("Write the name of your city:");
 if ( city === "karachi" ) {
@@ -8,6 +9,7 @@ if ( city === "karachi" ) {
 else {
     alert("Invalid Input.");
 }
+
 
 // Question-2
 var gender = prompt("What is your gender?");
@@ -20,6 +22,7 @@ else if ( gender === 'female' ) {
 else {
     alert("Invalid Input");
 }
+
 
 // Question-3
 var signalColor = prompt("What is color of light on signal?");
@@ -35,6 +38,7 @@ else if (signalColor === 'green'){
 else {
     alert("Invalid Input");
 }
+
 
 // Question-4
 var fuelLeft = prompt("How many litres of fuel left in a car?");
@@ -106,13 +110,31 @@ if ("car" < "cat"){
 
 // (..............Displayed.............)
 
+
 // Question-6
 var obtainedMarksInThreeSubjects = +prompt("Write the obtained marks of three subjects:");
 var totalMarksInThreeSubjects = +prompt("Write the total marks of three subjects:");
 var percentage =  (obtainedMarksInThreeSubjects / totalMarksInThreeSubjects)*100 ;
+var grade ;
+var remarks ;
 if (percentage >= 80){
-
+    grade = "A-one" ;
+    remarks = "Excellent" ;
 }
+else if (percentage >= 70){
+    grade = "A" ;
+    remarks = "Good" ;
+}
+else if (percentage >= 60){
+    grade = "B" ;
+    remarks = "You need to improve" ;
+}
+else {
+    grade = "Fail" ;
+    remarks = "Sorry" ;
+}
+document.write("Marks Sheet" + "<br>" + "<br>" + "Total Marks: " + totalMarksInThreeSubjects + "<br>" + "Marks Obtained: " + obtainedMarksInThreeSubjects + "<br>" + "Percentage: " + percentage.toFixed(2) + "%" + "<br>" + "Grade: " + grade + "<br>" + "Remarks: " + remarks)
+
 
 // Question-7
 var numberToBeGuess = +prompt("Guess the secret number!");
@@ -129,6 +151,7 @@ else{
     alert("This is not a secret number");
 }
 
+
 // Question-8
 var numberToBeCheck = +prompt("write a number to check. it's divisible by 3 or not:");
 numberToBeCheck =+ numberToBeCheck % 3 ;
@@ -139,6 +162,7 @@ else {
     alert("This number is not divisible by 3");
 }
 
+
 // Question-9
 var numberToBeCheck = +prompt("write a number to be check:");
 numberToBeCheck =+ numberToBeCheck % 2 ;
@@ -148,3 +172,52 @@ if (numberToBeCheck === 0 ){
 else {
     alert("This is an odd number");
 }
+
+
+// Question-10
+var temperature = +prompt("Write the temperature.");
+if ( temperature > 40){
+    alert("It is too hot outside.")
+}
+else if ( temperature > 30){
+    alert("The Weather today is Normal.")
+}
+else if ( temperature > 20){
+    alert("Today’s Weather is cool.")
+}
+else if ( temperature > 10){
+    alert("OMG! Today’s weather is so Cool.")
+}
+
+
+// Question-11
+var num1 = +prompt("Enter the First number: ");
+var num2 = +prompt("Enter the Second number: ");
+var operator = prompt("Enter the operation (+, -, *, /, %): ");
+var result;
+if ( operator === "+" ) {
+    result = num1 + num2 ;
+}
+else if ( operator === "-" ) {
+    result = num1 - num2 ;
+}
+else if ( operator === "/") {
+    if (num2 === 0) {
+        alert("Cannot divide by 0");
+    }
+    else {
+        result = num1 / num2 ;
+    }
+}
+else if ( operator === "%" ) {
+    if ( num2 === 0 ) {
+        alert("Cannot calculate modulus with 0");
+    }
+    else {
+        result = num1 % num2 ;
+    }
+}
+else {
+    alert("invalid operator");
+}
+alert("Result: " + result);
